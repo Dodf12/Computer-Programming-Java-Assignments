@@ -89,7 +89,17 @@ public class Ch10Ex1thru4
      */
     public void ohmsLaw()
     {
-        
+        System.out.println("Input voltage: ");
+        int voltage= scan.nextInt();
+        double amps;
+        System.out.println("Input resistance: ");
+        int resistance= scan.nextInt();
+
+        amps = (voltage + 0.0) / resistance;
+
+        System.out.println(amps);
+
+
     }
 
     /**
