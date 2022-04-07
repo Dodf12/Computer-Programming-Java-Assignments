@@ -120,15 +120,18 @@ public class Ch47ArrayAlgorithmsEx1_6
     public void Ex4_ReverserVersion1( int[] data )
     {
         // reverse the data
-        /*for ( int j = 0; j < TODO be careful here; j++ )*/
+        int temp = 0;
+        for ( int j = 0; j < data.length ; j++ )
         {
-            // TODO complete code
+            temp = data[j];
+            data[j] = data[data.length-j-1];
+            data[data.length-j-1] = temp;
         }
-
+ 
         // write out the new data
         for ( int j = 0; j < data.length; j++ )
         {
-            // TODO complete code
+            System.out.println(data[j]);
         }
     }
 
@@ -144,9 +147,11 @@ public class Ch47ArrayAlgorithmsEx1_6
         int[] result = null; // TODO FIX THIS!!
 
         // copy the data in reversed order to result
-        /*for ( int j = 0; j < TODO be careful here; j++ )*/
+        for ( int j = 0; j < data.length; j++ )
         {
-            // TODO complete code
+            temp = data[j];
+            data[j] = data[data.length-j-1];
+            data[data.length-j-1] = temp;
         }
 
         // write out the result
