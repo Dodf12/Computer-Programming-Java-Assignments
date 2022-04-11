@@ -121,7 +121,7 @@ public class Ch47ArrayAlgorithmsEx1_6
     {
         // reverse the data
         int temp = 0;
-        for ( int j = 0; j < data.length ; j++ )
+        for ( int j = 0; j < data.length/2 ; j++ )
         {
             temp = data[j];
             data[j] = data[data.length-j-1];
@@ -144,20 +144,19 @@ public class Ch47ArrayAlgorithmsEx1_6
      */
     public int[] Ex4_ReverserVersion2( int[] data )
     {
-        int[] result = null; // TODO FIX THIS!!
+        int[] result = new int[14]; // TODO FIX THIS!!
 
         // copy the data in reversed order to result
         for ( int j = 0; j < data.length; j++ )
         {
-            temp = data[j];
-            data[j] = data[data.length-j-1];
-            data[data.length-j-1] = temp;
+            int temp = data[j];
+            result[data.length-j-1] = temp;
         }
 
         // write out the result
         for ( int j = 0; j < data.length; j++ )
         {
-            // TODO complete code
+            System.out.println(result[j]);
         }
 
         return result;
@@ -191,14 +190,22 @@ public class Ch47ArrayAlgorithmsEx1_6
      */
     public int[] Ex5_Smooth( int[] signal )
     {
-        int[] smooth = null; // TODO FIX THIS!!
+        int[] smooth = new int[signal.length]; // TODO FIX THIS!!
 
         // compute the smoothed value for each cell of the array smooth
         smooth[0] = 0;                 // TODO FIX THIS!!
         smooth[signal.length - 1] = 0; // TODO FIX THIS!!
-        /*for ( TODO fix the loop parameters )*/
+        for (int idx=0; idx < smooth.length; idx++)
         {
-            // TODO complete the code
+            if (idx == 0) 
+            {
+                smooth[idx] = signal[idx] + signal[idx+1];
+            }
+            else if(idx>0)
+            {
+                smooth[idx] = signal[idx-1] + signal[idx] + signal[idx+1];
+            }
+
         }
 
         // write out the input
@@ -238,7 +245,9 @@ public class Ch47ArrayAlgorithmsEx1_6
         File file = new File( fileName );   // create a File object
         Scanner scan = new Scanner( file ); // connect a Scanner to the file
 
-        // TODO complete method
+        while(scan.hasNextInt()) {
+            int num = scan.nextInt();
+        }
 
         scan.close();
         return new double[] { average, mostDistant, newAverage };
