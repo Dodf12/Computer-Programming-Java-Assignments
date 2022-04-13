@@ -1,3 +1,5 @@
+
+   
 import java.io.*;
 
 /**
@@ -59,8 +61,10 @@ public class Weight
     {
         int day_avg = 0;
         for (int i = start; i<end+1; i++){
-            
+            day_avg+=data[i];
         }
+        day_avg = day_avg/ (end-start + 1);
+        return day_avg;
     }
 
     /**
