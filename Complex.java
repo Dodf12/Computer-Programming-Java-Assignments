@@ -97,8 +97,7 @@ public class Complex {
         int new_real = this.real + other.real;
         int new_imag = this.imag + other.imag;
         Complex add = new Complex(new_real, new_imag);
-        return add;
-
+        return add; 
     }
 
     public static void main(String[] args)
